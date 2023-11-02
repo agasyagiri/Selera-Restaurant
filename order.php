@@ -40,9 +40,9 @@ while ($record = mysqli_fetch_array($query)) {
                                 <div class="row">
                                     <div class="col-lg-3">
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" id="UploadFoto" 
+                                            <input type="text" class="form-control" id="KodeOrder" 
                                             name="kode_order" value="<?php echo date('ymdHi').rand(100,999) ?>" readonly>
-                                            <label for="UploadFoto">Kode Order</label>
+                                            <label for="KodeOrder">Kode Order</label>
                                             <div class="invalid-feedback">
                                                 Masukkan Kode Order.
                                             </div>
