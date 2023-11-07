@@ -4,7 +4,7 @@ if (isset($_GET['x']) && $_GET['x'] == 'home') {
     $page = "home.php";
     include "main.php";
 } elseif (isset($_GET['x']) && $_GET['x'] == 'order') {
-    if ($_SESSION['level_selera'] == 1 || $_SESSION['level_selera'] == 3) {
+    if ($_SESSION['level_selera'] == 1 || $_SESSION['level_selera'] == 2 || $_SESSION['level_selera'] == 3) {
         $page = "order.php";
         include "main.php";
     } else {
