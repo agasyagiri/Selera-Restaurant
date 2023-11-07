@@ -391,7 +391,7 @@ $select_kat_menu = mysqli_query($conn, "SELECT id_kat_menu,kategori_menu FROM tb
                                         <?php echo $row['kategori_menu'] ?>
                                     </td>
                                     <td>
-                                        <?php echo $row['harga'] ?>
+                                        <?php echo number_format((int)$row['harga'], 0, ',', '.') ?>
                                     </td>
                                     <td>
                                         <?php echo $row['stok'] ?>

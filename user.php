@@ -214,7 +214,7 @@ while ($record = mysqli_fetch_array($query)) {
                                         </div>
                                         <div class="col-lg-6">
                                             <div class="form-floating mb-3">
-                                                <input <?php echo ($row['username'] == $_SESSION['username_selera']) ? 'disabled' : '' ; ?> type="email" class="form-control" id="floatingInput"
+                                                <input <?php echo ($row['username'] == $_SESSION['username_selera']) ? 'readonly' : '' ; ?> type="email" class="form-control" id="floatingInput"
                                                     placeholder="name@example.com" name="username" required
                                                     value="<?php echo $row['username'] ?>">
                                                 <label for="floatingInput">Username</label>
