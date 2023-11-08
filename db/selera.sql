@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 07 Nov 2023 pada 07.40
+-- Waktu pembuatan: 08 Nov 2023 pada 04.26
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -71,10 +71,12 @@ INSERT INTO `tb_daftar_menu` (`id`, `foto`, `nama_menu`, `keterangan`, `kategori
 (3, '3.jpg', 'Nasi Uduk', 'Enak Poll', 1, '12000', '10'),
 (9, '4.jpg', 'Mie Ayam', 'Enak Poll', 1, '8000', '10'),
 (10, '5.jpg', 'Es Teh', 'Seger Poll', 4, '3000', '10'),
-(14, '18023-6.jpg', 'Es Jeruk', 'Seger Poll', 4, '4000', '15'),
+(14, '6.jpg', 'Es Jeruk', 'Seger Poll', 4, '4000', '15'),
 (18, '7.jpg', 'Es Coklat', 'Seger Poll', 3, '5000', '15'),
-(19, '83596-8.jpg', 'Jus Mangga', 'Seger Poll', 3, '5000', '10'),
-(20, '87311-10.jpg', 'Jus Alpukat', 'Seger Poll', 3, '5000', '10');
+(19, '8.jpg', 'Jus Mangga', 'Seger Poll', 3, '5000', '10'),
+(20, '10.jpg', 'Jus Alpukat', 'Seger Poll', 3, '5000', '10'),
+(21, '11.jpg', 'Nasi Kuning', 'Enak Poll', 1, '13000', '10'),
+(22, '9.jpg', 'Nasi Goreng', 'Enak Poll', 1, '10000', '10');
 
 -- --------------------------------------------------------
 
@@ -249,7 +251,7 @@ ALTER TABLE `tb_user`
 -- AUTO_INCREMENT untuk tabel `tb_daftar_menu`
 --
 ALTER TABLE `tb_daftar_menu`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_kategori_menu`

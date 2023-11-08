@@ -1,36 +1,48 @@
+<?php
+include "proses/connect.php";
+$query = mysqli_query($conn, "SELECT * FROM tb_daftar_menu");
+while ($row = mysqli_fetch_array($query)) {
+    $result[] = $row;
+}
+?>
 <div class="col-lg-9 mt-2">
     <!-- Carousel -->
     <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
-                aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
-                aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
-                aria-label="Slide 3"></button>
+            <?php
+            $slide = 0;
+            $firstSlideButton = true;
+            foreach ($result as $dataTombol) {
+                ($firstSlideButton) ? $aktif = "active" : "";
+                $firstSlideButton = false;
+                ?>
+
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="<?php echo $slide ?>"
+                    class="<?php echo $aktif ?>" aria-current="true" aria-label="Slide <?php echo $slide+1 ?>"></button>
+                <?php
+                $slide++;
+            } ?>
         </div>
         <div class="carousel-inner rounded">
-            <div class="carousel-item active">
-                <img src="assets/img/1.jpg" class="img-fluid" style="height: 250px; width: 1000px; object-fit:cover;" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>First slide label</h5>
-                    <p>Some representative placeholder content for the first slide.</p>
+            <?php
+            $firstSlide = true;
+            foreach ($result as $data) {
+                ($firstSlide) ? $aktif = "active" : $aktif = "";
+                $firstSlide = false;
+                ?>
+                <div class="carousel-item <?php echo $aktif ?>">
+                    <img src="assets/img/<?php echo $data['foto'] ?>" class="img-fluid"
+                        style="height: 250px; width: 1000px; object-fit:cover;" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>
+                            <?php echo $data['nama_menu'] ?>
+                        </h5>
+                        <p>
+                            <?php echo $data['keterangan'] ?>
+                        </p>
+                    </div>
                 </div>
-            </div>
-            <div class="carousel-item">
-                <img src="assets/img/4.jpg" class="img-fluid" style="height: 250px; width: 1000px; object-fit:cover;" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Second slide label</h5>
-                    <p>Some representative placeholder content for the second slide.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img src="assets/img/2.jpg" class="img-fluid" style="height: 250px; width: 1000px; object-fit:cover;"  alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Third slide label</h5>
-                    <p>Some representative placeholder content for the third slide.</p>
-                </div>
-            </div>
+            <?php } ?>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
             data-bs-slide="prev">
@@ -44,6 +56,7 @@
         </button>
     </div>
     <!-- End Carousel -->
+
     <div class="card mt-4 border-0 bg-light">
         <div class="card-body text-center">
             <h5 class="card-title">SELERA - Web Pemesanan Makanan dan Minuman</h5>
